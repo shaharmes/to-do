@@ -12,6 +12,14 @@ body{
         border-radius: 15px 15px 0 0;
         position: relative;
 
+        #date{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #FFF;
+            font-size: 25px;
+        }
+
     }
 
     #content{
@@ -42,6 +50,11 @@ body{
                 top:5px;
                 background-color: #FFF;
                 max-width:285px;
+            }
+
+            .lineThrough{
+                text-decoration: line-through;
+                color : #ccc;
             }
 
             i.co{

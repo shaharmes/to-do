@@ -47,3 +47,27 @@ function addToDo (toDo : string, id : number, done : boolean, trash : boolean) {
                     
 }
 
+function completeToDo (element : HTMLElement) {
+    element.classList.toggle(CHECK);
+    element.classList.toggle(UNCHECK);
+    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+    LIST[element.id].done = LIST[element.id].done ? false : true;
+}
+
+function removeToDo (element : HTMLElement) {
+    element.parentNode.parentNode.removeChild(element.parentNode);
+    LIST[element.id].trash = true;
+}
+
+
+
+list.addEventListener('click', function (event : MouseEvent) {
+    const element : any = event.target;
+    const elementJob = element.attributes.job.value;
+    if (elementJob === 'complete') {
+        completeToDo(element);
+    } else if (elementJob === 'delete') {
+        removeToDo(element);
+    }
+
+});
